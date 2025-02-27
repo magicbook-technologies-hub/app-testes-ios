@@ -1,7 +1,7 @@
 Feature('login');
 
-Scenario('login',  ({ I }) => {
+Scenario('login',  ({ I ,loginPage}) => {
 
-    I.tap('//XCUIElementTypeOther[@name="Pular"]')
+   loginPage.clickButtonPular()
 
 });

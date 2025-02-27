@@ -1,0 +1,2503 @@
+{
+  "layer_shapes" : {
+    "model\/block5b_add\/add" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4c_se_expand\/BiasAdd" : {
+      "k" : 80,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5c_expand_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5b_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block4a_activation\/Sigmoid" : {
+      "k" : 40,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5a_expand_activation\/mul_1" : {
+      "k" : 112,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_expand_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4b_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5c_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_expand_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5b_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5b_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5c_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6f_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6g_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6d_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5e_se_excite\/mul" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6e_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block6f_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4c_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block6b_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_286__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6b_add\/add" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_298__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4c_expand_activation\/mul_1" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6f_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block3b_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 8,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block5a_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6f_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5e_expand_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6d_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5e_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5c_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4b_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "input_1" : {
+      "k" : 3,
+      "w" : 224,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 224
+    },
+    "model\/block5e_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6f_se_excite\/mul" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_expand_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4b_activation\/Sigmoid" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6e_se_expand\/Sigmoid" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6e_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4a_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6a_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5d_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5c_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5d_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block1a_project_activation\/Sigmoid" : {
+      "k" : 16,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 112
+    },
+    "model\/block6a_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_274__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_292__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6e_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6f_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6h_se_expand\/BiasAdd" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block6b_se_expand\/Sigmoid" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4a_expand_activation\/mul_1" : {
+      "k" : 40,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "transpose_299" : {
+      "k" : 40,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5c_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5e_se_expand\/Sigmoid" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4a_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 16,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4b_expand_activation\/mul_1" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6d_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6e_add\/add" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6g_expand_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6h_se_expand\/Sigmoid" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block3b_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "transpose_298" : {
+      "k" : 14,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block2b_expand_activation\/Sigmoid" : {
+      "k" : 128,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "model\/block6h_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4c_add\/add" : {
+      "k" : 16,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_297" : {
+      "k" : 80,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6e_expand_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6d_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block6h_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6e_se_expand\/BiasAdd" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5d_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_296" : {
+      "k" : 14,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_se_expand\/Sigmoid" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4a_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block3b_expand_activation\/mul_1" : {
+      "k" : 40,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block6b_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6h_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4a_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 40,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_300" : {
+      "k" : 14,
+      "w" : 40,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_295" : {
+      "k" : 80,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5d_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6d_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5e_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_289" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6a_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block2a_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 32,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "transpose_280__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5e_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_294" : {
+      "k" : 14,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_288" : {
+      "k" : 14,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6b_se_expand\/BiasAdd" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_293" : {
+      "k" : 112,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5e_se_expand\/BiasAdd" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block2b_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 128,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "model\/block5c_add\/add" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_287" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4b_se_expand\/Sigmoid" : {
+      "k" : 80,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block1a_project_activation\/mul_1" : {
+      "k" : 16,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 112
+    },
+    "transpose_292" : {
+      "k" : 14,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6h_add\/add" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_286" : {
+      "k" : 14,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6c_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6a_se_excite\/mul" : {
+      "k" : 136,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6g_se_excite\/mul" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_291" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_285" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5b_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block3b_expand_activation\/Sigmoid" : {
+      "k" : 40,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "transpose_290" : {
+      "k" : 14,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_se_expand\/BiasAdd" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_279" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "const_0" : {
+      "k" : 3,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_284" : {
+      "k" : 7,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4b_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "transpose_278" : {
+      "k" : 7,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block3a_expand_activation\/mul_1" : {
+      "k" : 24,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "transpose_283" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4c_activation\/Sigmoid" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4b_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_277" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6e_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6c_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_282" : {
+      "k" : 7,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4c_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5b_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5d_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_276" : {
+      "k" : 7,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5e_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block4b_se_expand\/BiasAdd" : {
+      "k" : 80,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_281" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6c_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block5d_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_276__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_275" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6h_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_280" : {
+      "k" : 7,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block2b_expand_activation\/mul_1" : {
+      "k" : 128,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "transpose_288__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6d_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_269" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_274" : {
+      "k" : 7,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4a_activation\/mul_1" : {
+      "k" : 40,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5a_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 112,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6f_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "v1" : {
+      "k" : 7,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6b_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5c_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_se_excite\/mul" : {
+      "k" : 112,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_273" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5c_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6h_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "v2" : {
+      "k" : 7,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_267" : {
+      "k" : 7,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_272" : {
+      "k" : 7,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4a_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4b_expand_activation\/Sigmoid" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_expand_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_271" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6h_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6b_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block3a_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 24,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block6e_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6b_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4c_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5e_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4a_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 40,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_se_expand\/Sigmoid" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5e_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4c_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6c_add\/add" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6g_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_270" : {
+      "k" : 7,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_282__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5d_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5e_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6b_se_excite\/mul" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6d_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4a_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block6h_se_excite\/mul" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4b_activation\/mul_1" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6g_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_294__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block2a_expand_activation\/mul_1" : {
+      "k" : 64,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "model\/block4a_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 40,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block6d_se_expand\/Sigmoid" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5c_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6d_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "const_1" : {
+      "k" : 3,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5d_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_300__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 40,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4a_se_excite\/mul" : {
+      "k" : 40,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block2b_add\/add" : {
+      "k" : 32,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "model\/block5d_expand_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6a_se_expand\/BiasAdd" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block2a_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 64,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "model\/block5d_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/normalization\/truediv" : {
+      "k" : 3,
+      "w" : 224,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 224
+    },
+    "model\/block6g_se_expand\/BiasAdd" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6a_se_expand\/Sigmoid" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5d_se_expand\/Sigmoid" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4c_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6b_expand_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_270__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_add\/add" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6a_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block5a_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4b_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_se_expand\/BiasAdd" : {
+      "k" : 112,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4b_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 16,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4c_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "conv_0" : {
+      "k" : 2,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5b_se_excite\/mul" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6d_se_expand\/BiasAdd" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block3b_add\/add" : {
+      "k" : 8,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block6h_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_se_expand\/Sigmoid" : {
+      "k" : 112,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6h_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_expand_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_expand_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block2a_expand_activation\/Sigmoid" : {
+      "k" : 64,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "model\/block4b_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4a_se_expand\/BiasAdd" : {
+      "k" : 40,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6g_expand_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6h_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "corners" : {
+      "k" : 7,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block3a_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 8,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block5d_se_expand\/BiasAdd" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6d_expand_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6b_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block2b_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 32,
+      "w" : 56,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 56
+    },
+    "model\/block6e_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4a_se_expand\/Sigmoid" : {
+      "k" : 40,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6c_se_excite\/mul" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6h_expand_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5a_activation\/Sigmoid" : {
+      "k" : 112,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5d_add\/add" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5e_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6c_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6b_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4c_activation\/mul_1" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6e_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "conv_1" : {
+      "k" : 1,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/normalization\/sub" : {
+      "k" : 3,
+      "w" : 224,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 224
+    },
+    "model\/block5c_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block6b_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4b_se_excite\/mul" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "transpose_278__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_296__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block1a_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 16,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 112
+    },
+    "model\/block5a_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6e_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6h_expand_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6d_se_excite\/mul" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/projection_relu\/Relu" : {
+      "k" : 224,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6d_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6d_expand_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6b_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5c_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6h_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6e_expand_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5e_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6f_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/stem_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 32,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 112
+    },
+    "model\/block6d_add\/add" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5a_activation\/mul_1" : {
+      "k" : 112,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block3a_expand_activation\/Sigmoid" : {
+      "k" : 24,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block6c_se_expand\/Sigmoid" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 112,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "objectness" : {
+      "k" : 7,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5c_se_excite\/mul" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_activation\/Sigmoid" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6e_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4b_add\/add" : {
+      "k" : 16,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/stem_activation\/mul_1" : {
+      "k" : 32,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 112
+    },
+    "model\/block5b_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6d_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_272__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "transpose_290__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6c_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "conv_2" : {
+      "k" : 2,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4a_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_284__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_se_expand\/BiasAdd" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6a_se_squeeze\/Mean" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "model\/block4c_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5c_se_expand\/Sigmoid" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5d_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block4c_expand_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6b_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6f_se_expand\/Sigmoid" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6b_expand_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/rescaling\/mul" : {
+      "k" : 3,
+      "w" : 224,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 224
+    },
+    "model\/block5b_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 136,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5e_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6c_expand_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6f_se_squeeze\/Mean_presqueeze" : {
+      "k" : 1,
+      "w" : 232,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5d_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4b_se_reduce\/Sigmoid" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/stem_activation\/Sigmoid" : {
+      "k" : 32,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 112
+    },
+    "model\/block4c_expand_activation\/Sigmoid" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6g_add\/add" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6c_se_expand\/BiasAdd" : {
+      "k" : 232,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6d_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4a_expand_activation\/Sigmoid" : {
+      "k" : 40,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "model\/block4c_se_expand\/Sigmoid" : {
+      "k" : 80,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4c_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 16,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5a_expand_activation\/Sigmoid" : {
+      "k" : 112,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6g_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block4c_se_excite\/mul" : {
+      "k" : 80,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5c_expand_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5a_se_reshape\/Reshape" : {
+      "k" : 1,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "conv_3" : {
+      "k" : 2,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5d_expand_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6h_project_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 40,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5e_expand_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6e_activation\/Sigmoid" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block6e_se_excite\/mul" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block5c_se_expand\/BiasAdd" : {
+      "k" : 136,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5c_bn\/FusedBatchNormV3_nchw" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6e_activation\/mul_1" : {
+      "k" : 232,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "model\/block4b_se_reduce\/BiasAdd" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block6a_expand_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5d_se_excite\/mul" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block5b_activation\/mul_1" : {
+      "k" : 136,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "model\/block6b_se_reduce\/mul_1" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "model\/block5e_add\/add" : {
+      "k" : 24,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    }
+  }
+}

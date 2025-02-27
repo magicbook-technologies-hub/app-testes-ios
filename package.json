@@ -1,0 +1,22 @@
+{
+  "name": "app-testes-ios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magicbook-technologies-hub/app-testes-ios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magicbook-technologies-hub/app-testes-ios/issues"
+  },
+  "homepage": "https://github.com/magicbook-technologies-hub/app-testes-ios#readme",
+  "description": "",
+  "dependencies": {
+    "codeceptjs": "^3.7.2"
+  }
+}

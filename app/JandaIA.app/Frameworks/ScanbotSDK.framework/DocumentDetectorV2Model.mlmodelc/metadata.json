@@ -1,0 +1,99 @@
+[
+  {
+    "metadataOutputVersion" : "3.0",
+    "storagePrecision" : "Float32",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32)",
+        "shortDescription" : "",
+        "shape" : "[]",
+        "name" : "objectness",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32)",
+        "shortDescription" : "",
+        "shape" : "[]",
+        "name" : "corners",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32)",
+        "shortDescription" : "",
+        "shape" : "[]",
+        "name" : "v1",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32)",
+        "shortDescription" : "",
+        "shape" : "[]",
+        "name" : "v2",
+        "type" : "MultiArray"
+      }
+    ],
+    "modelParameters" : [
+
+    ],
+    "specificationVersion" : 4,
+    "computePrecision" : "Float16",
+    "isUpdatable" : "0",
+    "stateSchema" : [
+
+    ],
+    "availability" : {
+      "macOS" : "10.15",
+      "tvOS" : "13.0",
+      "visionOS" : "1.0",
+      "watchOS" : "6.0",
+      "iOS" : "13.0",
+      "macCatalyst" : "13.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetwork"
+    },
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "7.0",
+      "com.github.apple.coremltools.source" : "tensorflow==2.14.0"
+    },
+    "inputSchema" : [
+      {
+        "height" : "224",
+        "colorspace" : "RGB",
+        "isOptional" : "0",
+        "width" : "224",
+        "isColor" : "1",
+        "formattedType" : "Image (Color 224 × 224)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "",
+        "name" : "input_1"
+      }
+    ],
+    "generatedClassName" : "DocumentDetectorV2Model",
+    "neuralNetworkLayerTypeHistogram" : {
+      "Multiply" : 72,
+      "ActivationReLU" : 1,
+      "ReshapeStatic" : 16,
+      "Transpose" : 36,
+      "Add" : 16,
+      "LoadConstantND" : 2,
+      "Convolution" : 95,
+      "ActivationSigmoid" : 71,
+      "ReduceMean" : 16
+    },
+    "method" : "predict"
+  }
+]

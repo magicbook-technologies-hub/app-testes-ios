@@ -1,0 +1,6412 @@
+{
+  "layers" : [
+    {
+      "bottom" : "input_1",
+      "alpha" : 0.0039215688593685627,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/rescaling\/mul",
+      "top" : "model\/rescaling\/mul",
+      "type" : "elementwise",
+      "name" : "model\/rescaling\/mul",
+      "beta" : 0
+    },
+    {
+      "top" : "const_0",
+      "w" : 1,
+      "h" : 1,
+      "name" : "const_0",
+      "nd_rank" : 4,
+      "type" : "load_constant",
+      "k" : 3,
+      "bottom" : "",
+      "debug_info" : "const_0",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 1
+    },
+    {
+      "bottom" : "model\/rescaling\/mul,const_0",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/normalization\/sub",
+      "top" : "model\/normalization\/sub",
+      "type" : "elementwise",
+      "name" : "model\/normalization\/sub",
+      "beta" : 0
+    },
+    {
+      "top" : "const_1",
+      "w" : 1,
+      "h" : 1,
+      "name" : "const_1",
+      "nd_rank" : 4,
+      "type" : "load_constant",
+      "k" : 3,
+      "bottom" : "",
+      "debug_info" : "const_1",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 3
+    },
+    {
+      "bottom" : "model\/normalization\/sub,const_1",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/normalization\/truediv",
+      "top" : "model\/normalization\/truediv",
+      "type" : "elementwise",
+      "name" : "model\/normalization\/truediv",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/stem_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/stem_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 7,
+      "K" : 3,
+      "blob_biases" : 5,
+      "stride_x" : 2,
+      "name" : "model\/stem_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "model\/normalization\/truediv",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/stem_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/stem_activation\/Sigmoid",
+      "top" : "model\/stem_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/stem_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/stem_bn\/FusedBatchNormV3_nchw,model\/stem_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/stem_activation\/mul_1",
+      "top" : "model\/stem_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/stem_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block1a_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block1a_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 11,
+      "K" : 32,
+      "blob_biases" : 9,
+      "name" : "model\/block1a_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "model\/stem_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block1a_project_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block1a_project_activation\/Sigmoid",
+      "top" : "model\/block1a_project_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block1a_project_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block1a_project_bn\/FusedBatchNormV3_nchw,model\/block1a_project_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block1a_project_activation\/mul_1",
+      "top" : "model\/block1a_project_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block1a_project_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block2a_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block2a_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 15,
+      "K" : 16,
+      "blob_biases" : 13,
+      "stride_x" : 2,
+      "name" : "model\/block2a_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "model\/block1a_project_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block2a_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block2a_expand_activation\/Sigmoid",
+      "top" : "model\/block2a_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block2a_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block2a_expand_bn\/FusedBatchNormV3_nchw,model\/block2a_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block2a_expand_activation\/mul_1",
+      "top" : "model\/block2a_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block2a_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block2a_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block2a_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 19,
+      "K" : 64,
+      "blob_biases" : 17,
+      "name" : "model\/block2a_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "model\/block2a_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block2b_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block2b_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 23,
+      "K" : 32,
+      "blob_biases" : 21,
+      "name" : "model\/block2b_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "model\/block2a_project_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block2b_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block2b_expand_activation\/Sigmoid",
+      "top" : "model\/block2b_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block2b_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block2b_expand_bn\/FusedBatchNormV3_nchw,model\/block2b_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block2b_expand_activation\/mul_1",
+      "top" : "model\/block2b_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block2b_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block2b_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block2b_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 27,
+      "K" : 128,
+      "blob_biases" : 25,
+      "name" : "model\/block2b_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "model\/block2b_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block2b_project_bn\/FusedBatchNormV3_nchw,model\/block2a_project_bn\/FusedBatchNormV3_nchw",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block2b_add\/add",
+      "top" : "model\/block2b_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block2b_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block3a_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block3a_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 31,
+      "K" : 32,
+      "blob_biases" : 29,
+      "stride_x" : 2,
+      "name" : "model\/block3a_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 24,
+      "bottom" : "model\/block2b_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block3a_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block3a_expand_activation\/Sigmoid",
+      "top" : "model\/block3a_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block3a_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block3a_expand_bn\/FusedBatchNormV3_nchw,model\/block3a_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block3a_expand_activation\/mul_1",
+      "top" : "model\/block3a_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block3a_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block3a_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block3a_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 35,
+      "K" : 24,
+      "blob_biases" : 33,
+      "name" : "model\/block3a_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "model\/block3a_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block3b_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block3b_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 39,
+      "K" : 8,
+      "blob_biases" : 37,
+      "name" : "model\/block3b_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block3a_project_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block3b_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block3b_expand_activation\/Sigmoid",
+      "top" : "model\/block3b_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block3b_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block3b_expand_bn\/FusedBatchNormV3_nchw,model\/block3b_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block3b_expand_activation\/mul_1",
+      "top" : "model\/block3b_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block3b_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block3b_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block3b_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 43,
+      "K" : 40,
+      "blob_biases" : 41,
+      "name" : "model\/block3b_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "model\/block3b_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block3b_project_bn\/FusedBatchNormV3_nchw,model\/block3a_project_bn\/FusedBatchNormV3_nchw",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block3b_add\/add",
+      "top" : "model\/block3b_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block3b_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4a_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4a_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 47,
+      "K" : 8,
+      "blob_biases" : 45,
+      "name" : "model\/block4a_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block3b_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4a_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4a_expand_activation\/Sigmoid",
+      "top" : "model\/block4a_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4a_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4a_expand_bn\/FusedBatchNormV3_nchw,model\/block4a_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4a_expand_activation\/mul_1",
+      "top" : "model\/block4a_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4a_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4a_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4a_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 51,
+      "K" : 40,
+      "blob_biases" : 49,
+      "stride_x" : 2,
+      "name" : "model\/block4a_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 40,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block4a_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4a_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4a_activation\/Sigmoid",
+      "top" : "model\/block4a_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4a_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4a_bn\/FusedBatchNormV3_nchw,model\/block4a_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4a_activation\/mul_1",
+      "top" : "model\/block4a_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4a_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block4a_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_300",
+      "top" : "transpose_300",
+      "type" : "transpose",
+      "name" : "transpose_300"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_300",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block4a_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_300__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block4a_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_300__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block4a_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block4a_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block4a_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block4a_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block4a_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block4a_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block4a_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block4a_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 40,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block4a_se_squeeze\/Mean",
+      "debug_info" : "model\/block4a_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block4a_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block4a_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_299",
+      "top" : "transpose_299",
+      "type" : "transpose",
+      "name" : "transpose_299"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4a_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4a_se_reduce\/BiasAdd",
+      "blob_weights" : 55,
+      "K" : 40,
+      "blob_biases" : 53,
+      "name" : "model\/block4a_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_299",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4a_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4a_se_reduce\/Sigmoid",
+      "top" : "model\/block4a_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4a_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4a_se_reduce\/BiasAdd,model\/block4a_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4a_se_reduce\/mul_1",
+      "top" : "model\/block4a_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4a_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4a_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4a_se_expand\/BiasAdd",
+      "blob_weights" : 59,
+      "K" : 8,
+      "blob_biases" : 57,
+      "name" : "model\/block4a_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block4a_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4a_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4a_se_expand\/Sigmoid",
+      "top" : "model\/block4a_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4a_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4a_activation\/mul_1,model\/block4a_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4a_se_excite\/mul",
+      "top" : "model\/block4a_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block4a_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4a_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4a_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 63,
+      "K" : 40,
+      "blob_biases" : 61,
+      "name" : "model\/block4a_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "model\/block4a_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4b_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4b_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 67,
+      "K" : 16,
+      "blob_biases" : 65,
+      "name" : "model\/block4b_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 80,
+      "bottom" : "model\/block4a_project_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4b_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4b_expand_activation\/Sigmoid",
+      "top" : "model\/block4b_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4b_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4b_expand_bn\/FusedBatchNormV3_nchw,model\/block4b_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4b_expand_activation\/mul_1",
+      "top" : "model\/block4b_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4b_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4b_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4b_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 71,
+      "K" : 80,
+      "blob_biases" : 69,
+      "name" : "model\/block4b_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 80,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 80,
+      "bottom" : "model\/block4b_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4b_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4b_activation\/Sigmoid",
+      "top" : "model\/block4b_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4b_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4b_bn\/FusedBatchNormV3_nchw,model\/block4b_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4b_activation\/mul_1",
+      "top" : "model\/block4b_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4b_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block4b_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_298",
+      "top" : "transpose_298",
+      "type" : "transpose",
+      "name" : "transpose_298"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_298",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block4b_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_298__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block4b_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_298__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block4b_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block4b_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block4b_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block4b_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block4b_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block4b_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block4b_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block4b_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 80,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block4b_se_squeeze\/Mean",
+      "debug_info" : "model\/block4b_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block4b_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block4b_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_297",
+      "top" : "transpose_297",
+      "type" : "transpose",
+      "name" : "transpose_297"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4b_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4b_se_reduce\/BiasAdd",
+      "blob_weights" : 75,
+      "K" : 80,
+      "blob_biases" : 73,
+      "name" : "model\/block4b_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_297",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4b_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4b_se_reduce\/Sigmoid",
+      "top" : "model\/block4b_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4b_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4b_se_reduce\/BiasAdd,model\/block4b_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4b_se_reduce\/mul_1",
+      "top" : "model\/block4b_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4b_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4b_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4b_se_expand\/BiasAdd",
+      "blob_weights" : 79,
+      "K" : 8,
+      "blob_biases" : 77,
+      "name" : "model\/block4b_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 80,
+      "bottom" : "model\/block4b_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4b_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4b_se_expand\/Sigmoid",
+      "top" : "model\/block4b_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4b_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4b_activation\/mul_1,model\/block4b_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4b_se_excite\/mul",
+      "top" : "model\/block4b_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block4b_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4b_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4b_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 83,
+      "K" : 80,
+      "blob_biases" : 81,
+      "name" : "model\/block4b_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "model\/block4b_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4b_project_bn\/FusedBatchNormV3_nchw,model\/block4a_project_bn\/FusedBatchNormV3_nchw",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4b_add\/add",
+      "top" : "model\/block4b_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block4b_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4c_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4c_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 87,
+      "K" : 16,
+      "blob_biases" : 85,
+      "name" : "model\/block4c_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 80,
+      "bottom" : "model\/block4b_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4c_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4c_expand_activation\/Sigmoid",
+      "top" : "model\/block4c_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4c_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4c_expand_bn\/FusedBatchNormV3_nchw,model\/block4c_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4c_expand_activation\/mul_1",
+      "top" : "model\/block4c_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4c_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4c_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4c_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 91,
+      "K" : 80,
+      "blob_biases" : 89,
+      "name" : "model\/block4c_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 80,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 80,
+      "bottom" : "model\/block4c_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4c_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4c_activation\/Sigmoid",
+      "top" : "model\/block4c_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4c_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4c_bn\/FusedBatchNormV3_nchw,model\/block4c_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4c_activation\/mul_1",
+      "top" : "model\/block4c_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4c_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block4c_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_296",
+      "top" : "transpose_296",
+      "type" : "transpose",
+      "name" : "transpose_296"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_296",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block4c_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_296__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block4c_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_296__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block4c_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block4c_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block4c_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block4c_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block4c_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block4c_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block4c_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block4c_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 80,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block4c_se_squeeze\/Mean",
+      "debug_info" : "model\/block4c_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block4c_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block4c_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_295",
+      "top" : "transpose_295",
+      "type" : "transpose",
+      "name" : "transpose_295"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4c_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4c_se_reduce\/BiasAdd",
+      "blob_weights" : 95,
+      "K" : 80,
+      "blob_biases" : 93,
+      "name" : "model\/block4c_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_295",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4c_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4c_se_reduce\/Sigmoid",
+      "top" : "model\/block4c_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4c_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4c_se_reduce\/BiasAdd,model\/block4c_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4c_se_reduce\/mul_1",
+      "top" : "model\/block4c_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block4c_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4c_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4c_se_expand\/BiasAdd",
+      "blob_weights" : 99,
+      "K" : 8,
+      "blob_biases" : 97,
+      "name" : "model\/block4c_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 80,
+      "bottom" : "model\/block4c_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4c_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block4c_se_expand\/Sigmoid",
+      "top" : "model\/block4c_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block4c_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block4c_activation\/mul_1,model\/block4c_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4c_se_excite\/mul",
+      "top" : "model\/block4c_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block4c_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block4c_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block4c_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 103,
+      "K" : 80,
+      "blob_biases" : 101,
+      "name" : "model\/block4c_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "model\/block4c_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block4c_project_bn\/FusedBatchNormV3_nchw,model\/block4b_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block4c_add\/add",
+      "top" : "model\/block4c_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block4c_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5a_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5a_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 107,
+      "K" : 16,
+      "blob_biases" : 105,
+      "name" : "model\/block5a_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 112,
+      "bottom" : "model\/block4c_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5a_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5a_expand_activation\/Sigmoid",
+      "top" : "model\/block5a_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5a_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5a_expand_bn\/FusedBatchNormV3_nchw,model\/block5a_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5a_expand_activation\/mul_1",
+      "top" : "model\/block5a_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5a_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5a_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5a_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 111,
+      "K" : 112,
+      "blob_biases" : 109,
+      "name" : "model\/block5a_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 112,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 112,
+      "bottom" : "model\/block5a_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5a_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5a_activation\/Sigmoid",
+      "top" : "model\/block5a_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5a_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5a_bn\/FusedBatchNormV3_nchw,model\/block5a_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5a_activation\/mul_1",
+      "top" : "model\/block5a_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5a_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block5a_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_294",
+      "top" : "transpose_294",
+      "type" : "transpose",
+      "name" : "transpose_294"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_294",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5a_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_294__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block5a_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_294__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5a_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block5a_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block5a_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block5a_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block5a_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block5a_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block5a_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block5a_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 112,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block5a_se_squeeze\/Mean",
+      "debug_info" : "model\/block5a_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block5a_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block5a_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_293",
+      "top" : "transpose_293",
+      "type" : "transpose",
+      "name" : "transpose_293"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5a_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5a_se_reduce\/BiasAdd",
+      "blob_weights" : 115,
+      "K" : 112,
+      "blob_biases" : 113,
+      "name" : "model\/block5a_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_293",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5a_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5a_se_reduce\/Sigmoid",
+      "top" : "model\/block5a_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5a_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5a_se_reduce\/BiasAdd,model\/block5a_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5a_se_reduce\/mul_1",
+      "top" : "model\/block5a_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5a_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5a_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5a_se_expand\/BiasAdd",
+      "blob_weights" : 119,
+      "K" : 8,
+      "blob_biases" : 117,
+      "name" : "model\/block5a_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 112,
+      "bottom" : "model\/block5a_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5a_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5a_se_expand\/Sigmoid",
+      "top" : "model\/block5a_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5a_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5a_activation\/mul_1,model\/block5a_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5a_se_excite\/mul",
+      "top" : "model\/block5a_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block5a_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5a_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5a_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 123,
+      "K" : 112,
+      "blob_biases" : 121,
+      "name" : "model\/block5a_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 24,
+      "bottom" : "model\/block5a_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5b_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5b_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 127,
+      "K" : 24,
+      "blob_biases" : 125,
+      "name" : "model\/block5b_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5a_project_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5b_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5b_expand_activation\/Sigmoid",
+      "top" : "model\/block5b_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5b_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5b_expand_bn\/FusedBatchNormV3_nchw,model\/block5b_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5b_expand_activation\/mul_1",
+      "top" : "model\/block5b_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5b_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5b_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5b_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 131,
+      "K" : 136,
+      "blob_biases" : 129,
+      "name" : "model\/block5b_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 136,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5b_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5b_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5b_activation\/Sigmoid",
+      "top" : "model\/block5b_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5b_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5b_bn\/FusedBatchNormV3_nchw,model\/block5b_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5b_activation\/mul_1",
+      "top" : "model\/block5b_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5b_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block5b_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_292",
+      "top" : "transpose_292",
+      "type" : "transpose",
+      "name" : "transpose_292"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_292",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5b_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_292__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block5b_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_292__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5b_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block5b_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block5b_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block5b_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block5b_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block5b_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block5b_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block5b_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 136,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block5b_se_squeeze\/Mean",
+      "debug_info" : "model\/block5b_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block5b_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block5b_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_291",
+      "top" : "transpose_291",
+      "type" : "transpose",
+      "name" : "transpose_291"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5b_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5b_se_reduce\/BiasAdd",
+      "blob_weights" : 135,
+      "K" : 136,
+      "blob_biases" : 133,
+      "name" : "model\/block5b_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_291",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5b_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5b_se_reduce\/Sigmoid",
+      "top" : "model\/block5b_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5b_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5b_se_reduce\/BiasAdd,model\/block5b_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5b_se_reduce\/mul_1",
+      "top" : "model\/block5b_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5b_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5b_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5b_se_expand\/BiasAdd",
+      "blob_weights" : 139,
+      "K" : 8,
+      "blob_biases" : 137,
+      "name" : "model\/block5b_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5b_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5b_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5b_se_expand\/Sigmoid",
+      "top" : "model\/block5b_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5b_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5b_activation\/mul_1,model\/block5b_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5b_se_excite\/mul",
+      "top" : "model\/block5b_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block5b_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5b_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5b_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 143,
+      "K" : 136,
+      "blob_biases" : 141,
+      "name" : "model\/block5b_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 24,
+      "bottom" : "model\/block5b_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5b_project_bn\/FusedBatchNormV3_nchw,model\/block5a_project_bn\/FusedBatchNormV3_nchw",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5b_add\/add",
+      "top" : "model\/block5b_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block5b_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5c_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5c_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 147,
+      "K" : 24,
+      "blob_biases" : 145,
+      "name" : "model\/block5c_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5b_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5c_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5c_expand_activation\/Sigmoid",
+      "top" : "model\/block5c_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5c_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5c_expand_bn\/FusedBatchNormV3_nchw,model\/block5c_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5c_expand_activation\/mul_1",
+      "top" : "model\/block5c_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5c_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5c_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5c_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 151,
+      "K" : 136,
+      "blob_biases" : 149,
+      "name" : "model\/block5c_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 136,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5c_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5c_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5c_activation\/Sigmoid",
+      "top" : "model\/block5c_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5c_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5c_bn\/FusedBatchNormV3_nchw,model\/block5c_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5c_activation\/mul_1",
+      "top" : "model\/block5c_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5c_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block5c_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_290",
+      "top" : "transpose_290",
+      "type" : "transpose",
+      "name" : "transpose_290"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_290",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5c_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_290__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block5c_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_290__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5c_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block5c_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block5c_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block5c_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block5c_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block5c_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block5c_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block5c_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 136,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block5c_se_squeeze\/Mean",
+      "debug_info" : "model\/block5c_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block5c_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block5c_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_289",
+      "top" : "transpose_289",
+      "type" : "transpose",
+      "name" : "transpose_289"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5c_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5c_se_reduce\/BiasAdd",
+      "blob_weights" : 155,
+      "K" : 136,
+      "blob_biases" : 153,
+      "name" : "model\/block5c_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_289",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5c_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5c_se_reduce\/Sigmoid",
+      "top" : "model\/block5c_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5c_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5c_se_reduce\/BiasAdd,model\/block5c_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5c_se_reduce\/mul_1",
+      "top" : "model\/block5c_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5c_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5c_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5c_se_expand\/BiasAdd",
+      "blob_weights" : 159,
+      "K" : 8,
+      "blob_biases" : 157,
+      "name" : "model\/block5c_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5c_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5c_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5c_se_expand\/Sigmoid",
+      "top" : "model\/block5c_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5c_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5c_activation\/mul_1,model\/block5c_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5c_se_excite\/mul",
+      "top" : "model\/block5c_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block5c_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5c_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5c_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 163,
+      "K" : 136,
+      "blob_biases" : 161,
+      "name" : "model\/block5c_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 24,
+      "bottom" : "model\/block5c_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5c_project_bn\/FusedBatchNormV3_nchw,model\/block5b_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5c_add\/add",
+      "top" : "model\/block5c_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block5c_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5d_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5d_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 167,
+      "K" : 24,
+      "blob_biases" : 165,
+      "name" : "model\/block5d_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5c_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5d_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5d_expand_activation\/Sigmoid",
+      "top" : "model\/block5d_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5d_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5d_expand_bn\/FusedBatchNormV3_nchw,model\/block5d_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5d_expand_activation\/mul_1",
+      "top" : "model\/block5d_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5d_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5d_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5d_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 171,
+      "K" : 136,
+      "blob_biases" : 169,
+      "name" : "model\/block5d_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 136,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5d_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5d_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5d_activation\/Sigmoid",
+      "top" : "model\/block5d_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5d_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5d_bn\/FusedBatchNormV3_nchw,model\/block5d_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5d_activation\/mul_1",
+      "top" : "model\/block5d_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5d_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block5d_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_288",
+      "top" : "transpose_288",
+      "type" : "transpose",
+      "name" : "transpose_288"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_288",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5d_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_288__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block5d_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_288__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5d_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block5d_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block5d_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block5d_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block5d_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block5d_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block5d_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block5d_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 136,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block5d_se_squeeze\/Mean",
+      "debug_info" : "model\/block5d_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block5d_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block5d_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_287",
+      "top" : "transpose_287",
+      "type" : "transpose",
+      "name" : "transpose_287"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5d_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5d_se_reduce\/BiasAdd",
+      "blob_weights" : 175,
+      "K" : 136,
+      "blob_biases" : 173,
+      "name" : "model\/block5d_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_287",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5d_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5d_se_reduce\/Sigmoid",
+      "top" : "model\/block5d_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5d_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5d_se_reduce\/BiasAdd,model\/block5d_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5d_se_reduce\/mul_1",
+      "top" : "model\/block5d_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5d_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5d_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5d_se_expand\/BiasAdd",
+      "blob_weights" : 179,
+      "K" : 8,
+      "blob_biases" : 177,
+      "name" : "model\/block5d_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5d_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5d_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5d_se_expand\/Sigmoid",
+      "top" : "model\/block5d_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5d_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5d_activation\/mul_1,model\/block5d_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5d_se_excite\/mul",
+      "top" : "model\/block5d_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block5d_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5d_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5d_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 183,
+      "K" : 136,
+      "blob_biases" : 181,
+      "name" : "model\/block5d_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 24,
+      "bottom" : "model\/block5d_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5d_project_bn\/FusedBatchNormV3_nchw,model\/block5c_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5d_add\/add",
+      "top" : "model\/block5d_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block5d_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5e_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5e_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 187,
+      "K" : 24,
+      "blob_biases" : 185,
+      "name" : "model\/block5e_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5d_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5e_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5e_expand_activation\/Sigmoid",
+      "top" : "model\/block5e_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5e_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5e_expand_bn\/FusedBatchNormV3_nchw,model\/block5e_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5e_expand_activation\/mul_1",
+      "top" : "model\/block5e_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5e_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5e_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5e_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 191,
+      "K" : 136,
+      "blob_biases" : 189,
+      "name" : "model\/block5e_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 136,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5e_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5e_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5e_activation\/Sigmoid",
+      "top" : "model\/block5e_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5e_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5e_bn\/FusedBatchNormV3_nchw,model\/block5e_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5e_activation\/mul_1",
+      "top" : "model\/block5e_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5e_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block5e_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_286",
+      "top" : "transpose_286",
+      "type" : "transpose",
+      "name" : "transpose_286"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_286",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5e_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_286__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block5e_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_286__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block5e_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block5e_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block5e_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block5e_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block5e_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block5e_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block5e_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block5e_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 136,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block5e_se_squeeze\/Mean",
+      "debug_info" : "model\/block5e_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block5e_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block5e_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_285",
+      "top" : "transpose_285",
+      "type" : "transpose",
+      "name" : "transpose_285"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5e_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5e_se_reduce\/BiasAdd",
+      "blob_weights" : 195,
+      "K" : 136,
+      "blob_biases" : 193,
+      "name" : "model\/block5e_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_285",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5e_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5e_se_reduce\/Sigmoid",
+      "top" : "model\/block5e_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5e_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5e_se_reduce\/BiasAdd,model\/block5e_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5e_se_reduce\/mul_1",
+      "top" : "model\/block5e_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block5e_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5e_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5e_se_expand\/BiasAdd",
+      "blob_weights" : 199,
+      "K" : 8,
+      "blob_biases" : 197,
+      "name" : "model\/block5e_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5e_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5e_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block5e_se_expand\/Sigmoid",
+      "top" : "model\/block5e_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block5e_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block5e_activation\/mul_1,model\/block5e_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5e_se_excite\/mul",
+      "top" : "model\/block5e_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block5e_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block5e_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block5e_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 203,
+      "K" : 136,
+      "blob_biases" : 201,
+      "name" : "model\/block5e_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 24,
+      "bottom" : "model\/block5e_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block5e_project_bn\/FusedBatchNormV3_nchw,model\/block5d_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block5e_add\/add",
+      "top" : "model\/block5e_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block5e_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6a_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6a_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 207,
+      "K" : 24,
+      "blob_biases" : 205,
+      "name" : "model\/block6a_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block5e_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6a_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6a_expand_activation\/Sigmoid",
+      "top" : "model\/block6a_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6a_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6a_expand_bn\/FusedBatchNormV3_nchw,model\/block6a_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6a_expand_activation\/mul_1",
+      "top" : "model\/block6a_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6a_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6a_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6a_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 211,
+      "K" : 136,
+      "blob_biases" : 209,
+      "stride_x" : 2,
+      "name" : "model\/block6a_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 136,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block6a_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6a_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6a_activation\/Sigmoid",
+      "top" : "model\/block6a_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6a_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6a_bn\/FusedBatchNormV3_nchw,model\/block6a_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6a_activation\/mul_1",
+      "top" : "model\/block6a_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6a_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6a_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_284",
+      "top" : "transpose_284",
+      "type" : "transpose",
+      "name" : "transpose_284"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_284",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6a_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_284__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6a_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_284__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6a_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6a_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6a_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6a_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6a_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6a_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6a_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6a_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 136,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6a_se_squeeze\/Mean",
+      "debug_info" : "model\/block6a_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6a_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6a_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_283",
+      "top" : "transpose_283",
+      "type" : "transpose",
+      "name" : "transpose_283"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6a_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6a_se_reduce\/BiasAdd",
+      "blob_weights" : 215,
+      "K" : 136,
+      "blob_biases" : 213,
+      "name" : "model\/block6a_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_283",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6a_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6a_se_reduce\/Sigmoid",
+      "top" : "model\/block6a_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6a_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6a_se_reduce\/BiasAdd,model\/block6a_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6a_se_reduce\/mul_1",
+      "top" : "model\/block6a_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6a_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6a_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6a_se_expand\/BiasAdd",
+      "blob_weights" : 219,
+      "K" : 8,
+      "blob_biases" : 217,
+      "name" : "model\/block6a_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 136,
+      "bottom" : "model\/block6a_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6a_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6a_se_expand\/Sigmoid",
+      "top" : "model\/block6a_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6a_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6a_activation\/mul_1,model\/block6a_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6a_se_excite\/mul",
+      "top" : "model\/block6a_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6a_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6a_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6a_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 223,
+      "K" : 136,
+      "blob_biases" : 221,
+      "name" : "model\/block6a_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6a_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6b_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6b_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 227,
+      "K" : 40,
+      "blob_biases" : 225,
+      "name" : "model\/block6b_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6a_project_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6b_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6b_expand_activation\/Sigmoid",
+      "top" : "model\/block6b_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6b_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6b_expand_bn\/FusedBatchNormV3_nchw,model\/block6b_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6b_expand_activation\/mul_1",
+      "top" : "model\/block6b_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6b_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6b_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6b_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 231,
+      "K" : 232,
+      "blob_biases" : 229,
+      "name" : "model\/block6b_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 232,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6b_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6b_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6b_activation\/Sigmoid",
+      "top" : "model\/block6b_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6b_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6b_bn\/FusedBatchNormV3_nchw,model\/block6b_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6b_activation\/mul_1",
+      "top" : "model\/block6b_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6b_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6b_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_282",
+      "top" : "transpose_282",
+      "type" : "transpose",
+      "name" : "transpose_282"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_282",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6b_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_282__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6b_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_282__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6b_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6b_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6b_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6b_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6b_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6b_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6b_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6b_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 232,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6b_se_squeeze\/Mean",
+      "debug_info" : "model\/block6b_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6b_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6b_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_281",
+      "top" : "transpose_281",
+      "type" : "transpose",
+      "name" : "transpose_281"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6b_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6b_se_reduce\/BiasAdd",
+      "blob_weights" : 235,
+      "K" : 232,
+      "blob_biases" : 233,
+      "name" : "model\/block6b_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_281",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6b_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6b_se_reduce\/Sigmoid",
+      "top" : "model\/block6b_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6b_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6b_se_reduce\/BiasAdd,model\/block6b_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6b_se_reduce\/mul_1",
+      "top" : "model\/block6b_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6b_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6b_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6b_se_expand\/BiasAdd",
+      "blob_weights" : 239,
+      "K" : 8,
+      "blob_biases" : 237,
+      "name" : "model\/block6b_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6b_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6b_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6b_se_expand\/Sigmoid",
+      "top" : "model\/block6b_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6b_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6b_activation\/mul_1,model\/block6b_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6b_se_excite\/mul",
+      "top" : "model\/block6b_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6b_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6b_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6b_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 243,
+      "K" : 232,
+      "blob_biases" : 241,
+      "name" : "model\/block6b_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6b_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6b_project_bn\/FusedBatchNormV3_nchw,model\/block6a_project_bn\/FusedBatchNormV3_nchw",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6b_add\/add",
+      "top" : "model\/block6b_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block6b_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6c_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6c_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 247,
+      "K" : 40,
+      "blob_biases" : 245,
+      "name" : "model\/block6c_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6b_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6c_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6c_expand_activation\/Sigmoid",
+      "top" : "model\/block6c_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6c_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6c_expand_bn\/FusedBatchNormV3_nchw,model\/block6c_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6c_expand_activation\/mul_1",
+      "top" : "model\/block6c_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6c_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6c_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6c_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 251,
+      "K" : 232,
+      "blob_biases" : 249,
+      "name" : "model\/block6c_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 232,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6c_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6c_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6c_activation\/Sigmoid",
+      "top" : "model\/block6c_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6c_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6c_bn\/FusedBatchNormV3_nchw,model\/block6c_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6c_activation\/mul_1",
+      "top" : "model\/block6c_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6c_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6c_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_280",
+      "top" : "transpose_280",
+      "type" : "transpose",
+      "name" : "transpose_280"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_280",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6c_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_280__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6c_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_280__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6c_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6c_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6c_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6c_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6c_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6c_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6c_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6c_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 232,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6c_se_squeeze\/Mean",
+      "debug_info" : "model\/block6c_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6c_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6c_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_279",
+      "top" : "transpose_279",
+      "type" : "transpose",
+      "name" : "transpose_279"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6c_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6c_se_reduce\/BiasAdd",
+      "blob_weights" : 255,
+      "K" : 232,
+      "blob_biases" : 253,
+      "name" : "model\/block6c_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_279",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6c_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6c_se_reduce\/Sigmoid",
+      "top" : "model\/block6c_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6c_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6c_se_reduce\/BiasAdd,model\/block6c_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6c_se_reduce\/mul_1",
+      "top" : "model\/block6c_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6c_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6c_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6c_se_expand\/BiasAdd",
+      "blob_weights" : 259,
+      "K" : 8,
+      "blob_biases" : 257,
+      "name" : "model\/block6c_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6c_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6c_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6c_se_expand\/Sigmoid",
+      "top" : "model\/block6c_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6c_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6c_activation\/mul_1,model\/block6c_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6c_se_excite\/mul",
+      "top" : "model\/block6c_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6c_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6c_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6c_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 263,
+      "K" : 232,
+      "blob_biases" : 261,
+      "name" : "model\/block6c_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6c_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6c_project_bn\/FusedBatchNormV3_nchw,model\/block6b_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6c_add\/add",
+      "top" : "model\/block6c_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block6c_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6d_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6d_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 267,
+      "K" : 40,
+      "blob_biases" : 265,
+      "name" : "model\/block6d_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6c_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6d_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6d_expand_activation\/Sigmoid",
+      "top" : "model\/block6d_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6d_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6d_expand_bn\/FusedBatchNormV3_nchw,model\/block6d_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6d_expand_activation\/mul_1",
+      "top" : "model\/block6d_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6d_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6d_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6d_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 271,
+      "K" : 232,
+      "blob_biases" : 269,
+      "name" : "model\/block6d_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 232,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6d_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6d_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6d_activation\/Sigmoid",
+      "top" : "model\/block6d_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6d_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6d_bn\/FusedBatchNormV3_nchw,model\/block6d_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6d_activation\/mul_1",
+      "top" : "model\/block6d_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6d_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6d_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_278",
+      "top" : "transpose_278",
+      "type" : "transpose",
+      "name" : "transpose_278"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_278",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6d_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_278__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6d_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_278__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6d_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6d_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6d_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6d_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6d_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6d_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6d_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6d_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 232,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6d_se_squeeze\/Mean",
+      "debug_info" : "model\/block6d_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6d_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6d_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_277",
+      "top" : "transpose_277",
+      "type" : "transpose",
+      "name" : "transpose_277"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6d_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6d_se_reduce\/BiasAdd",
+      "blob_weights" : 275,
+      "K" : 232,
+      "blob_biases" : 273,
+      "name" : "model\/block6d_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_277",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6d_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6d_se_reduce\/Sigmoid",
+      "top" : "model\/block6d_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6d_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6d_se_reduce\/BiasAdd,model\/block6d_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6d_se_reduce\/mul_1",
+      "top" : "model\/block6d_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6d_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6d_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6d_se_expand\/BiasAdd",
+      "blob_weights" : 279,
+      "K" : 8,
+      "blob_biases" : 277,
+      "name" : "model\/block6d_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6d_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6d_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6d_se_expand\/Sigmoid",
+      "top" : "model\/block6d_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6d_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6d_activation\/mul_1,model\/block6d_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6d_se_excite\/mul",
+      "top" : "model\/block6d_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6d_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6d_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6d_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 283,
+      "K" : 232,
+      "blob_biases" : 281,
+      "name" : "model\/block6d_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6d_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6d_project_bn\/FusedBatchNormV3_nchw,model\/block6c_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6d_add\/add",
+      "top" : "model\/block6d_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block6d_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6e_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6e_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 287,
+      "K" : 40,
+      "blob_biases" : 285,
+      "name" : "model\/block6e_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6d_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6e_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6e_expand_activation\/Sigmoid",
+      "top" : "model\/block6e_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6e_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6e_expand_bn\/FusedBatchNormV3_nchw,model\/block6e_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6e_expand_activation\/mul_1",
+      "top" : "model\/block6e_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6e_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6e_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6e_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 291,
+      "K" : 232,
+      "blob_biases" : 289,
+      "name" : "model\/block6e_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 232,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6e_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6e_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6e_activation\/Sigmoid",
+      "top" : "model\/block6e_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6e_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6e_bn\/FusedBatchNormV3_nchw,model\/block6e_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6e_activation\/mul_1",
+      "top" : "model\/block6e_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6e_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6e_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_276",
+      "top" : "transpose_276",
+      "type" : "transpose",
+      "name" : "transpose_276"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_276",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6e_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_276__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6e_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_276__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6e_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6e_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6e_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6e_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6e_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6e_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6e_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6e_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 232,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6e_se_squeeze\/Mean",
+      "debug_info" : "model\/block6e_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6e_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6e_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_275",
+      "top" : "transpose_275",
+      "type" : "transpose",
+      "name" : "transpose_275"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6e_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6e_se_reduce\/BiasAdd",
+      "blob_weights" : 295,
+      "K" : 232,
+      "blob_biases" : 293,
+      "name" : "model\/block6e_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_275",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6e_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6e_se_reduce\/Sigmoid",
+      "top" : "model\/block6e_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6e_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6e_se_reduce\/BiasAdd,model\/block6e_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6e_se_reduce\/mul_1",
+      "top" : "model\/block6e_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6e_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6e_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6e_se_expand\/BiasAdd",
+      "blob_weights" : 299,
+      "K" : 8,
+      "blob_biases" : 297,
+      "name" : "model\/block6e_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6e_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6e_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6e_se_expand\/Sigmoid",
+      "top" : "model\/block6e_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6e_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6e_activation\/mul_1,model\/block6e_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6e_se_excite\/mul",
+      "top" : "model\/block6e_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6e_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6e_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6e_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 303,
+      "K" : 232,
+      "blob_biases" : 301,
+      "name" : "model\/block6e_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6e_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6e_project_bn\/FusedBatchNormV3_nchw,model\/block6d_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6e_add\/add",
+      "top" : "model\/block6e_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block6e_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6f_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6f_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 307,
+      "K" : 40,
+      "blob_biases" : 305,
+      "name" : "model\/block6f_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6e_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6f_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6f_expand_activation\/Sigmoid",
+      "top" : "model\/block6f_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6f_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6f_expand_bn\/FusedBatchNormV3_nchw,model\/block6f_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6f_expand_activation\/mul_1",
+      "top" : "model\/block6f_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6f_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6f_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6f_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 311,
+      "K" : 232,
+      "blob_biases" : 309,
+      "name" : "model\/block6f_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 232,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6f_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6f_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6f_activation\/Sigmoid",
+      "top" : "model\/block6f_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6f_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6f_bn\/FusedBatchNormV3_nchw,model\/block6f_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6f_activation\/mul_1",
+      "top" : "model\/block6f_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6f_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6f_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_274",
+      "top" : "transpose_274",
+      "type" : "transpose",
+      "name" : "transpose_274"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_274",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6f_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_274__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6f_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_274__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6f_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6f_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6f_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6f_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6f_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6f_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6f_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6f_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 232,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6f_se_squeeze\/Mean",
+      "debug_info" : "model\/block6f_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6f_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6f_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_273",
+      "top" : "transpose_273",
+      "type" : "transpose",
+      "name" : "transpose_273"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6f_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6f_se_reduce\/BiasAdd",
+      "blob_weights" : 315,
+      "K" : 232,
+      "blob_biases" : 313,
+      "name" : "model\/block6f_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_273",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6f_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6f_se_reduce\/Sigmoid",
+      "top" : "model\/block6f_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6f_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6f_se_reduce\/BiasAdd,model\/block6f_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6f_se_reduce\/mul_1",
+      "top" : "model\/block6f_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6f_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6f_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6f_se_expand\/BiasAdd",
+      "blob_weights" : 319,
+      "K" : 8,
+      "blob_biases" : 317,
+      "name" : "model\/block6f_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6f_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6f_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6f_se_expand\/Sigmoid",
+      "top" : "model\/block6f_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6f_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6f_activation\/mul_1,model\/block6f_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6f_se_excite\/mul",
+      "top" : "model\/block6f_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6f_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6f_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6f_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 323,
+      "K" : 232,
+      "blob_biases" : 321,
+      "name" : "model\/block6f_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6f_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6f_project_bn\/FusedBatchNormV3_nchw,model\/block6e_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6f_add\/add",
+      "top" : "model\/block6f_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block6f_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6g_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6g_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 327,
+      "K" : 40,
+      "blob_biases" : 325,
+      "name" : "model\/block6g_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6f_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6g_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6g_expand_activation\/Sigmoid",
+      "top" : "model\/block6g_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6g_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6g_expand_bn\/FusedBatchNormV3_nchw,model\/block6g_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6g_expand_activation\/mul_1",
+      "top" : "model\/block6g_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6g_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6g_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6g_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 331,
+      "K" : 232,
+      "blob_biases" : 329,
+      "name" : "model\/block6g_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 232,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6g_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6g_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6g_activation\/Sigmoid",
+      "top" : "model\/block6g_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6g_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6g_bn\/FusedBatchNormV3_nchw,model\/block6g_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6g_activation\/mul_1",
+      "top" : "model\/block6g_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6g_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6g_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_272",
+      "top" : "transpose_272",
+      "type" : "transpose",
+      "name" : "transpose_272"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_272",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6g_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_272__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6g_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_272__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6g_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6g_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6g_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6g_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6g_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6g_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6g_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6g_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 232,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6g_se_squeeze\/Mean",
+      "debug_info" : "model\/block6g_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6g_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6g_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_271",
+      "top" : "transpose_271",
+      "type" : "transpose",
+      "name" : "transpose_271"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6g_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6g_se_reduce\/BiasAdd",
+      "blob_weights" : 335,
+      "K" : 232,
+      "blob_biases" : 333,
+      "name" : "model\/block6g_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_271",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6g_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6g_se_reduce\/Sigmoid",
+      "top" : "model\/block6g_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6g_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6g_se_reduce\/BiasAdd,model\/block6g_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6g_se_reduce\/mul_1",
+      "top" : "model\/block6g_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6g_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6g_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6g_se_expand\/BiasAdd",
+      "blob_weights" : 339,
+      "K" : 8,
+      "blob_biases" : 337,
+      "name" : "model\/block6g_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6g_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6g_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6g_se_expand\/Sigmoid",
+      "top" : "model\/block6g_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6g_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6g_activation\/mul_1,model\/block6g_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6g_se_excite\/mul",
+      "top" : "model\/block6g_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6g_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6g_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6g_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 343,
+      "K" : 232,
+      "blob_biases" : 341,
+      "name" : "model\/block6g_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6g_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6g_project_bn\/FusedBatchNormV3_nchw,model\/block6f_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6g_add\/add",
+      "top" : "model\/block6g_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block6g_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6h_expand_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6h_expand_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 347,
+      "K" : 40,
+      "blob_biases" : 345,
+      "name" : "model\/block6h_expand_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6g_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6h_expand_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6h_expand_activation\/Sigmoid",
+      "top" : "model\/block6h_expand_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6h_expand_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6h_expand_bn\/FusedBatchNormV3_nchw,model\/block6h_expand_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6h_expand_activation\/mul_1",
+      "top" : "model\/block6h_expand_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6h_expand_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6h_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6h_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 351,
+      "K" : 232,
+      "blob_biases" : 349,
+      "name" : "model\/block6h_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 232,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6h_expand_activation\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6h_bn\/FusedBatchNormV3_nchw",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6h_activation\/Sigmoid",
+      "top" : "model\/block6h_activation\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6h_activation\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6h_bn\/FusedBatchNormV3_nchw,model\/block6h_activation\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6h_activation\/mul_1",
+      "top" : "model\/block6h_activation\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6h_activation\/mul_1",
+      "beta" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "model\/block6h_activation\/mul_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_270",
+      "top" : "transpose_270",
+      "type" : "transpose",
+      "name" : "transpose_270"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_270",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6h_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_270__reduction_axis__1",
+      "type" : "reduce",
+      "name" : "model\/block6h_se_squeeze\/Mean__reduction_axis__0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_270__reduction_axis__1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "model\/block6h_se_squeeze\/Mean",
+      "use_version" : 1,
+      "top" : "model\/block6h_se_squeeze\/Mean_presqueeze",
+      "type" : "reduce",
+      "name" : "model\/block6h_se_squeeze\/Mean_presqueeze"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "model\/block6h_se_squeeze\/Mean_presqueeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "model\/block6h_se_squeeze\/Mean",
+      "version" : 1,
+      "top" : "model\/block6h_se_squeeze\/Mean",
+      "type" : "squeeze",
+      "name" : "model\/block6h_se_squeeze\/Mean"
+    },
+    {
+      "name" : "model\/block6h_se_reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 232,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "model\/block6h_se_squeeze\/Mean",
+      "debug_info" : "model\/block6h_se_reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "model\/block6h_se_reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "model\/block6h_se_reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_269",
+      "top" : "transpose_269",
+      "type" : "transpose",
+      "name" : "transpose_269"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6h_se_reduce\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6h_se_reduce\/BiasAdd",
+      "blob_weights" : 355,
+      "K" : 232,
+      "blob_biases" : 353,
+      "name" : "model\/block6h_se_reduce\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "transpose_269",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6h_se_reduce\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6h_se_reduce\/Sigmoid",
+      "top" : "model\/block6h_se_reduce\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6h_se_reduce\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6h_se_reduce\/BiasAdd,model\/block6h_se_reduce\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6h_se_reduce\/mul_1",
+      "top" : "model\/block6h_se_reduce\/mul_1",
+      "type" : "elementwise",
+      "name" : "model\/block6h_se_reduce\/mul_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6h_se_expand\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6h_se_expand\/BiasAdd",
+      "blob_weights" : 359,
+      "K" : 8,
+      "blob_biases" : 357,
+      "name" : "model\/block6h_se_expand\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 232,
+      "bottom" : "model\/block6h_se_reduce\/mul_1",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6h_se_expand\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/block6h_se_expand\/Sigmoid",
+      "top" : "model\/block6h_se_expand\/Sigmoid",
+      "type" : "activation",
+      "name" : "model\/block6h_se_expand\/Sigmoid"
+    },
+    {
+      "bottom" : "model\/block6h_activation\/mul_1,model\/block6h_se_expand\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6h_se_excite\/mul",
+      "top" : "model\/block6h_se_excite\/mul",
+      "type" : "elementwise",
+      "name" : "model\/block6h_se_excite\/mul",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/block6h_project_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/block6h_project_bn\/FusedBatchNormV3_nchw",
+      "blob_weights" : 363,
+      "K" : 232,
+      "blob_biases" : 361,
+      "name" : "model\/block6h_project_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 40,
+      "bottom" : "model\/block6h_se_excite\/mul",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "model\/block6h_project_bn\/FusedBatchNormV3_nchw,model\/block6g_add\/add",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/block6h_add\/add",
+      "top" : "model\/block6h_add\/add",
+      "type" : "elementwise",
+      "name" : "model\/block6h_add\/add",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "model\/projection_bn\/FusedBatchNormV3_nchw",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "model\/projection_relu\/Relu",
+      "blob_weights" : 367,
+      "K" : 40,
+      "blob_biases" : 365,
+      "name" : "model\/projection_bn\/FusedBatchNormV3_nchw",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 224,
+      "bottom" : "model\/block6h_add\/add",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv_0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "conv_0",
+      "blob_weights" : 371,
+      "K" : 224,
+      "blob_biases" : 369,
+      "name" : "conv_0",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2,
+      "bottom" : "model\/projection_relu\/Relu",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv_1",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "conv_1",
+      "blob_weights" : 375,
+      "K" : 224,
+      "blob_biases" : 373,
+      "name" : "conv_1",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1,
+      "bottom" : "model\/projection_relu\/Relu",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv_2",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "conv_2",
+      "blob_weights" : 379,
+      "K" : 224,
+      "blob_biases" : 377,
+      "name" : "conv_2",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2,
+      "bottom" : "model\/projection_relu\/Relu",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv_3",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "conv_3",
+      "blob_weights" : 383,
+      "K" : 224,
+      "blob_biases" : 381,
+      "name" : "conv_3",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2,
+      "bottom" : "model\/projection_relu\/Relu",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "conv_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_267",
+      "top" : "transpose_267",
+      "type" : "transpose",
+      "name" : "transpose_267"
+    },
+    {
+      "bottom" : "transpose_267",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/objectness\/Sigmoid",
+      "top" : "objectness",
+      "type" : "activation",
+      "name" : "model\/objectness\/Sigmoid",
+      "attributes" : {
+        "is_output" : 1
+      }
+    },
+    {
+      "axis_seq" : 4,
+      "name" : "transpose_265",
+      "axis_n" : 3,
+      "axis_h" : 0,
+      "type" : "transpose",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "bottom" : "conv_3",
+      "axis_w" : 2,
+      "axis_k" : 1,
+      "debug_info" : "transpose_265",
+      "weights" : {
+
+      },
+      "top" : "v2"
+    },
+    {
+      "axis_seq" : 4,
+      "name" : "transpose_266",
+      "axis_n" : 3,
+      "axis_h" : 0,
+      "type" : "transpose",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "bottom" : "conv_2",
+      "axis_w" : 2,
+      "axis_k" : 1,
+      "debug_info" : "transpose_266",
+      "weights" : {
+
+      },
+      "top" : "v1"
+    },
+    {
+      "axis_seq" : 4,
+      "name" : "transpose_268",
+      "axis_n" : 3,
+      "axis_h" : 0,
+      "type" : "transpose",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "bottom" : "conv_0",
+      "axis_w" : 2,
+      "axis_k" : 1,
+      "debug_info" : "transpose_268",
+      "weights" : {
+
+      },
+      "top" : "corners"
+    }
+  ],
+  "transform_params" : {
+    "input_1" : {
+      "bias_a" : 0,
+      "bias_g" : 0,
+      "bias_r" : 0,
+      "bias_b" : 0,
+      "center_mean" : 0,
+      "is_network_bgr" : 0,
+      "scale" : 1
+    }
+  },
+  "storage" : "model.espresso.weights",
+  "metadata_in_weights" : [
+
+  ],
+  "properties" : {
+
+  },
+  "analyses" : {
+
+  },
+  "format_version" : 200
+}

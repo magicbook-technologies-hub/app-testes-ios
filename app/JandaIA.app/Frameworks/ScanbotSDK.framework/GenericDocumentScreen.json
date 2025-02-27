@@ -1,0 +1,306 @@
+{
+    "acceptedDocumentTypes": [
+        "DE_ID_CARD_FRONT",
+        "DE_ID_CARD_BACK",
+        "DE_PASSPORT",
+        "DE_DRIVER_LICENSE_FRONT",
+        "DE_DRIVER_LICENSE_BACK",
+        "DE_RESIDENCE_PERMIT_FRONT",
+        "DE_RESIDENCE_PERMIT_BACK",
+        "DE_HEALTH_INSURANCE_CARD_FRONT",
+        "EU_HEALTH_INSURANCE_CARD"
+    ],
+    "cameraModule": "BACK",
+    "cameraOverlayColor": "#00000080",
+    "cameraPreviewMode": "FILL_IN",
+    "cancelButtonHidden": false,
+    "cancelButtonTitle": "Cancel",
+    "clearButtonTitle": "Clear",
+    "confidenceValue": "%li%% confidence",
+    "detailsActionColor": "#F7CE46",
+    "detailsBackgroundColor": "#000000",
+    "detailsPrimaryColor": "#FFFFFF",
+    "detailsSectionHeaderBackgroundColor": "#000000",
+    "detailsSectionHeaderTextColor": "#CFFFFFFF",
+    "documentsDisplayConfiguration": [
+        {
+            "defaultDisplayText": "German ID Card, Front Side",
+            "normalizedDocumentName": "DeIdCardFront"
+        }
+    ],
+    "emptyValueTitle": "<No value>",
+    "enableCameraButtonTitle": "Enable camera",
+    "enableCameraExplanationText": "Please enable the camera permission to start scanning.",
+    "excludedFieldTypes": null,
+    "fieldConfidenceHighColor": "#00CEFF",
+    "fieldConfidenceLowColor": "#FF7948",
+    "fieldConfidenceModerateColor": "#F2CA23",
+    "fieldConfidenceTextColor": "#000000",
+    "fieldsCountText": "%li fields",
+    "fieldsCountTextColor": "#FFFFFF80",
+    "fieldsDisplayConfiguration": [
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Birth date",
+            "normalizedFieldName": "DeIdCardFront.BirthDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Birthplace",
+            "normalizedFieldName": "DeIdCardFront.Birthplace"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Given names",
+            "normalizedFieldName": "DeIdCardFront.GivenNames"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Document ID",
+            "normalizedFieldName": "DeIdCardFront.ID"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Maiden name",
+            "normalizedFieldName": "DeIdCardFront.MaidenName"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Nationality",
+            "normalizedFieldName": "DeIdCardFront.Nationality"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "PIN",
+            "normalizedFieldName": "DeIdCardFront.PIN"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Photo image",
+            "normalizedFieldName": "DeIdCardFront.Photo"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Signature image",
+            "normalizedFieldName": "DeIdCardFront.Signature"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Surname",
+            "normalizedFieldName": "DeIdCardFront.Surname"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Address",
+            "normalizedFieldName": "DeIdCardBack.Address"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Eye color",
+            "normalizedFieldName": "DeIdCardBack.EyeColor"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Height",
+            "normalizedFieldName": "DeIdCardBack.Height"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Issue date",
+            "normalizedFieldName": "DeIdCardBack.IssueDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Issuing authority",
+            "normalizedFieldName": "DeIdCardBack.IssuingAuthority"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Pseudonym",
+            "normalizedFieldName": "DeIdCardBack.Pseudonym"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Raw MRZ text value",
+            "normalizedFieldName": "DeIdCardBack.RawMRZ"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Birth date",
+            "normalizedFieldName": "DePassport.BirthDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Birthplace",
+            "normalizedFieldName": "DePassport.Birthplace"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Country code",
+            "normalizedFieldName": "DePassport.CountryCode"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Expiry date",
+            "normalizedFieldName": "DePassport.ExpiryDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Gender",
+            "normalizedFieldName": "DePassport.Gender"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Given names",
+            "normalizedFieldName": "DePassport.GivenNames"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Document ID",
+            "normalizedFieldName": "DePassport.ID"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Issue date",
+            "normalizedFieldName": "DePassport.IssueDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Issuing authority",
+            "normalizedFieldName": "DePassport.IssuingAuthority"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Maiden name",
+            "normalizedFieldName": "DePassport.MaidenName"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Nationality",
+            "normalizedFieldName": "DePassport.Nationality"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Passport type",
+            "normalizedFieldName": "DePassport.PassportType"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Photo image",
+            "normalizedFieldName": "DePassport.Photo"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Raw MRZ text value",
+            "normalizedFieldName": "DePassport.RawMRZ"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Signature image",
+            "normalizedFieldName": "DePassport.Signature"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Surname",
+            "normalizedFieldName": "DePassport.Surname"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Birth date",
+            "normalizedFieldName": "DeDriverLicenseFront.BirthDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Birthplace",
+            "normalizedFieldName": "DeDriverLicenseFront.Birthplace"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Expiry date",
+            "normalizedFieldName": "DeDriverLicenseFront.ExpiryDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Given names",
+            "normalizedFieldName": "DeDriverLicenseFront.GivenNames"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Document ID",
+            "normalizedFieldName": "DeDriverLicenseFront.ID"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Issue date",
+            "normalizedFieldName": "DeDriverLicenseFront.IssueDate"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Issuing authority",
+            "normalizedFieldName": "DeDriverLicenseFront.IssuingAuthority"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Driver's license categories",
+            "normalizedFieldName": "DeDriverLicenseFront.LicenseCategories"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Photo image",
+            "normalizedFieldName": "DeDriverLicenseFront.Photo"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Signature image",
+            "normalizedFieldName": "DeDriverLicenseFront.Signature"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Surname",
+            "normalizedFieldName": "DeDriverLicenseFront.Surname"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Driver's license restrictions",
+            "normalizedFieldName": "DeDriverLicenseBack.Restrictions"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Restrictions",
+            "normalizedFieldName": "DeDriverLicenseBack.Category.Restrictions"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Valid from",
+            "normalizedFieldName": "DeDriverLicenseBack.Category.ValidFrom"
+        },
+        {
+            "defaultDisplayState": "ALWAYS_VISIBLE",
+            "defaultDisplayText": "Valid until",
+            "normalizedFieldName": "DeDriverLicenseBack.Category.ValidUntil"
+        }
+    ],
+    "finderLineColor": "#00CEA6",
+    "finderLineWidth": 2,
+    "flashButtonHidden": false,
+    "flashButtonTitle": "",
+    "flashEnabled": false,
+    "imageTitle": "Image",
+    "noDataTitle": "No data",
+    "orientationLockMode": "NONE",
+    "replaceCancelButtonWithIcon": false,
+    "scanBackSideTitle": "Now scan the back side",
+    "scanFrontSideTitle": "Now scan the front side",
+    "scannedEverythingTitle": "Success! You have captured all fields",
+    "screen": "GenericDocumentRecognizer",
+    "startScanningTitle": "Please start scanning",
+    "submitButtonTitle": "View Results",
+    "tipBackgroundColor": "#00CEA6",
+    "tipTextColor": "#FFFFFF",
+    "topBarBackgroundColor": "#000000",
+    "topBarButtonsActiveColor": "#F7CE46",
+    "topBarButtonsInactiveColor": "#FFFFFF",
+    "touchToFocusEnabled": true,
+    "useButtonsAllCaps": true,
+    "version": "1.0"
+}

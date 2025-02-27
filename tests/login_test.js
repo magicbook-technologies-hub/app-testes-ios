@@ -1,6 +1,6 @@
 Feature('login');
 
-Scenario('test something',  ({ I }) => {
+Scenario('login',  ({ I }) => {
 
     I.tap('//XCUIElementTypeOther[@name="Pular"]')
 

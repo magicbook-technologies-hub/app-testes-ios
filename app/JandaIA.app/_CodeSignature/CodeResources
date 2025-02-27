@@ -26,7 +26,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		yzRRdzmeBWVBRy96dTyM51HDS2E=
+		/qtnnqS4gzXa3gX39tUedYGs0oE=
 		</data>
 		<key>EXConstants.bundle/Info.plist</key>
 		<data>
@@ -34,7 +34,15 @@
 		</data>
 		<key>EXConstants.bundle/app.config</key>
 		<data>
-		KWzW4sCytbxVjHapb23gy9bKlfE=
+		TIDdjTqVpFquyl+J4YbnO5weP90=
+		</data>
+		<key>EXUpdates.bundle/Info.plist</key>
+		<data>
+		fInQ3/0GeGkC3G1rPrip4tUv9lU=
+		</data>
+		<key>EXUpdates.bundle/app.manifest</key>
+		<data>
+		gq4ksOnqTuBOGKjzaykJfuBMCDM=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -46,7 +54,7 @@
 		</data>
 		<key>Expo.plist</key>
 		<data>
-		OI+P4nZVo9J8M06vm3xn9SJcT6w=
+		23flFu16oOElXi4zQqcT5gD+4Ww=
 		</data>
 		<key>ExpoApplication_privacy.bundle/Info.plist</key>
 		<data>
@@ -1088,7 +1096,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		pYx1TbLFzXmvLjV6fsByxwodoiQ=
+		tv4iaV1xQzYcCtOWBTwOdybIprk=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -1132,7 +1140,7 @@
 		</data>
 		<key>PurchasesHybridCommon.bundle/Info.plist</key>
 		<data>
-		hz3FHGekumPEoKAa1w8ciEsgXKM=
+		TEvXudHMDF1t6BZJV3o7qoi6Aqo=
 		</data>
 		<key>PurchasesHybridCommon.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -1144,11 +1152,19 @@
 		</data>
 		<key>RNDeviceInfoPrivacyInfo.bundle/Info.plist</key>
 		<data>
-		Tyigzr662gtUxr0Isvg0kbp98GA=
+		FfDJxGq1QKL1C0B1RnfSyAFi5eM=
 		</data>
 		<key>RNDeviceInfoPrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
 		m8aNKGgCLWHtBQWong4x8zsNang=
+		</data>
+		<key>ReachabilitySwift.bundle/Info.plist</key>
+		<data>
+		HxHQcAwosBIedcAMOlIH9oKZNaI=
+		</data>
+		<key>ReachabilitySwift.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		0RESd+++ZxZWQhIEMSOOvP7phYs=
 		</data>
 		<key>React-Core_privacy.bundle/Info.plist</key>
 		<data>
@@ -1176,7 +1192,7 @@
 		</data>
 		<key>RevenueCat.bundle/Info.plist</key>
 		<data>
-		66ClvWkIX+lxdL+iOqnyOzmupds=
+		wm4t2jyc89ng3gK+JccGHjW+wkI=
 		</data>
 		<key>RevenueCat.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -1184,11 +1200,11 @@
 		</data>
 		<key>RevenueCat_RevenueCatUI.bundle/Assets.car</key>
 		<data>
-		DYhpHMASjG0u1djhS+V1VqSBZdU=
+		MULoUEMXOiqZuW/IYBtH6AYx1J4=
 		</data>
 		<key>RevenueCat_RevenueCatUI.bundle/Info.plist</key>
 		<data>
-		61Bzzbk0PxrfNFdC2Z15/NSofVo=
+		/IYmIS2Y3pPwaLSiiHGDVShVCqI=
 		</data>
 		<key>RevenueCat_RevenueCatUI.bundle/ar.lproj/Localizable.strings</key>
 		<dict>
@@ -1609,9 +1625,13 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>assets/assets/jandaia/media/logo.png</key>
+		<key>assets/assets/jandaia/media/images/logo.png</key>
 		<data>
-		J1tynFubmjMqOhmq0THSydq9zI0=
+		7rAxGF4AItKBuwLJvqglUXYS/bo=
+		</data>
+		<key>assets/assets/wise/media/images/logo.png</key>
+		<data>
+		SAwd2adeqrbbFcXF+cH4wIpwrk0=
 		</data>
 		<key>assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.ttf</key>
 		<data>
@@ -1725,26 +1745,6 @@
 		<data>
 		NkBM2IsMofmktWhRj3Yq3nUfico=
 		</data>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/alert-triangle.png</key>
-		<data>
-		0f6hSrAilSXnQ4Jp9L4r2AQv60Q=
-		</data>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/chevron-left.png</key>
-		<data>
-		gAZu95GrV8b3tU1SenGlKHJIfO0=
-		</data>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/chevron-right.png</key>
-		<data>
-		qzqIvQtXmRATGLTI0C6pIZCwdwo=
-		</data>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/close.png</key>
-		<data>
-		OFIk4sw3zdEcd+vIdKiOT3yLa08=
-		</data>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/loader.png</key>
-		<data>
-		dHGIEJV+3P1HqH+dn3VMeeU6tQA=
-		</data>
 		<key>assets/src/assets/icons/google.png</key>
 		<data>
 		VFA3oBAh3SS2/CtJkXJkAdx1gqE=
@@ -1793,7 +1793,7 @@
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		FsrPF+fJUQl5wKDLYofsIv9vP1E=
+		g291jnzbKiRg9Ma0bdxwrA+X9p4=
 		</data>
 		<key>modules.json</key>
 		<data>
@@ -1867,7 +1867,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RrE+Zwwn7MRuB3HM3eGt62/YhPjpQb4eDe+CtW+8fcU=
+			aovYJurJWP9iaF/cs72nWyn7FoG8xRJomaSHAcQI+Mk=
 			</data>
 		</dict>
 		<key>EXConstants.bundle/Info.plist</key>
@@ -1881,7 +1881,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gVqAeYNmpfr46XXy6q5MuOWKZ8IfZ/Isk1T85JpfZqo=
+			LopxP1VJbhsECQlJpQO3Ps9vb2bQiAwIkbjWvbHmWdQ=
+			</data>
+		</dict>
+		<key>EXUpdates.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			j7NwJC11IN7/cDfR+nOyqH0i98ZZBSFpbLxdp+v1d6Y=
+			</data>
+		</dict>
+		<key>EXUpdates.bundle/app.manifest</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xc0NofQDM4ivBDuT+31tvVhlVe4iT1ojNO+c7ls2f+A=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -1902,7 +1916,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0sOz3rrTPbK4V3ypiuYgG0bl+K95KyOmhxesfjlc770=
+			Vvn2C8FbSPvSsc44SM3clbVYF8Hf0mE+q3rHBCoKcqA=
 			</data>
 		</dict>
 		<key>ExpoApplication_privacy.bundle/Info.plist</key>
@@ -3532,7 +3546,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FT/agqq9dxAU3BdyolD91h+yIGdGFbCP5aimcTfTHa8=
+			wgCKJS5KLZ5pMNpbRnYXlLCUnGG0czHl4/FhfIIksc0=
 			</data>
 		</dict>
 		<key>PurchasesHybridCommon.bundle/PrivacyInfo.xcprivacy</key>
@@ -3553,7 +3567,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			llE/CE2+Y7618ylHg0D0p8HL20s8l5hvGIMRic7U/iU=
+			5EcNJ/kyZTOn7NdcqTYEf1MT8FprumREiy7OZuMpklo=
 			</data>
 		</dict>
 		<key>RNDeviceInfoPrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
@@ -3561,6 +3575,20 @@
 			<key>hash2</key>
 			<data>
 			4Ye67kwWytlqe/PE3iAZKFQmf1/L4XhtOgUgWAH3aeY=
+			</data>
+		</dict>
+		<key>ReachabilitySwift.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FzhjutInQxEVDKxw9+ZQrysJpnSxPoSyLTbZsnwiXvs=
+			</data>
+		</dict>
+		<key>ReachabilitySwift.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pwgfFQbJDo5nMQDlwWHnZbi3piREbiC9S9bvrKgICLg=
 			</data>
 		</dict>
 		<key>React-Core_privacy.bundle/Info.plist</key>
@@ -3609,7 +3637,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			70BTOi+QzVYTBY6oUtkOXHq/s9io7SIq+55vrgT9/QE=
+			rHEsxO7wGxC5EqReHPuovwqeyHVyzHFtFwoaz61r8lQ=
 			</data>
 		</dict>
 		<key>RevenueCat.bundle/PrivacyInfo.xcprivacy</key>
@@ -3623,14 +3651,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/18bR1IaDS3k9c7BL5r9TMygJBeHJJkItEXGOid/9mE=
+			LbDM46Fqh0FKBICs1SbPdg/uAJ1+TNIT9AMF4Hs3CS4=
 			</data>
 		</dict>
 		<key>RevenueCat_RevenueCatUI.bundle/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q9jYOUA6dk/HHnkHWwZp5ylxttdOaxd8BcVTyt7SdNU=
+			b93MLF+GZBDU3aGhx5TDHdXY9bZtNahVHPnkQUbsRX0=
 			</data>
 		</dict>
 		<key>RevenueCat_RevenueCatUI.bundle/ar.lproj/Localizable.strings</key>
@@ -4076,11 +4104,18 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>assets/assets/jandaia/media/logo.png</key>
+		<key>assets/assets/jandaia/media/images/logo.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vpy1w7FrAEFKfRax/kL8T2CfZ4wY/aGRNf6w768VsRM=
+			OrYKdqt3lH1mOSix80C450I4iis17PvMuhMFqBaHjyk=
+			</data>
+		</dict>
+		<key>assets/assets/wise/media/images/logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6bD4t96SXcE/nAkOU/4TpkfU0hjGkVbjtki4Tz0FXLI=
 			</data>
 		</dict>
 		<key>assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.ttf</key>
@@ -4279,41 +4314,6 @@
 			YzFVjvkhjfNTcvCO29IP8/ru0WqFO+VZVl0yB1QUocU=
 			</data>
 		</dict>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/alert-triangle.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			OB7EirEdTSuePX46Kj/tO6/H1Ghs9qqQ7XKUWHZ+QAo=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/chevron-left.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			A6dlwhbNu2SRI8yHXgMn0qDzzJHaYJRKrb3xvXRTf+Y=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/chevron-right.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			mOzTBxSPKzpoehlhwZZTGh3/JknD2O9obLl+FxrDKqo=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/close.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			v8eBFQIXaoBD2qeAWpDATyHPRhUSBy6eukN42r/bvFM=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-native/Libraries/LogBox/UI/LogBoxImages/loader.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Q5AfjHROVDRS2Y3necy57sLr2ZNZxyzc43l1fIlgXpI=
-			</data>
-		</dict>
 		<key>assets/src/assets/icons/google.png</key>
 		<dict>
 			<key>hash2</key>
@@ -4385,7 +4385,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7rJ5XeVhlHN5/0T+IDed5k3PP3gFcNTU+hdQK2AgaVk=
+			SSGINpLXP83BhKB8DRWECqlQn30lqlpKBjuPFP8JGmU=
 			</data>
 		</dict>
 		<key>modules.json</key>
